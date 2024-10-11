@@ -3,9 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rest Countries API</title>
+  <title>Rest Countries API -- Homepage</title>
+  <link rel="stylesheet" href="liaisons/css/styles.css"/>
 </head>
-<body>
-  
+<body class="homepage darkMode">
+  <header>
+    <p class="title">Where in the world?</p>
+    <button>Dark Mode</button>
+  </header>
+  <main>
+    <div>
+      <input class="search" placeholder="Search for a country" type="search">
+      <select class="filter" name="filter" id="filter">
+        <option value="">Filter by Region</option>
+        <option value="africa">Africa</option>
+        <option value="america">America</option>
+        <option value="asia">Asia</option>
+        <option value="europe">Europe</option>
+        <option value="oceania">Oceania</option>
+      </select>
+    </div>
+  <ul>
+    <li>
+      <a href="fiche.html">
+        <img src="https://flagcdn.com/w320/de.png" alt="flag">
+        <h2>Germany</h2>
+        <ul>
+          <li>Population: <span class="info">81,770,900</span></li>
+          <li>Region: <span class="info">Europe</span></li>
+          <li>Capital: <span class="info">Berlin</span></li>
+        </ul>
+      </li>
+      </a>
+  </ul>
+  </main>
 </body>
 </html>
