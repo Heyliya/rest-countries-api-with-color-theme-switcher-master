@@ -76,14 +76,9 @@
     @return #{$remSize}rem;
 };
 
-@function calcLetterSpacing($fontSize) {
-    @return calculateRem($fontSize*0.05)
-};
-
 @mixin fontSize($size) {
     font-size: $size;
     font-size: calculateRem($size);
-    letter-spacing: calcLetterSpacing($size);
 }
 
 //Pour utiliser la fonction : @include fontSize(15px);

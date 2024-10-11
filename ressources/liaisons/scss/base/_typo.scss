@@ -1,8 +1,6 @@
 /**
-* @author Prenom Nom courriel
-* @todo Préciser l’interlignage sur le body pour l’écran large
-* @todo Utiliser le mixin fontSize pour définir les tailles de polices
-* @todo Utiliser une variable pour la media query de la règle body
+* @author Léa Marois
+* @todo Trouver les font-size pour les h1/h2 et title
 */
 
 /**** Typographie responsive ****/
@@ -12,70 +10,29 @@ html {
 }
 
 body {
-  font-family: Century Gothic;
-  color: $noir;
-  @include fontSize(16px);
-  line-height: 1.5; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
-  @media (min-width: 601px) {
-  }
+  font-family: $fonte;
+  // color: $noir;
+  line-height: 1.5;
+  font-weight: 600;
 }
+.homepage {
+  @include fontSize(14px);
+}
+.detailPage {
+  @include fontSize(16px);
+}
+.title {
 
-.titre, h1, h2, .texte, .lien {
-  font-weight: 500;
 }
-.labels, h3 {
-  font-weight: 700;
-}
-.titre {
-  @include fontSize(36px);
-  font-weight: 500;
-  color: $blanc;
-  @media (min-width: 601px) {
-    @include fontSize(64px);
-  }
-}
-h1 {
-  @include fontSize(32px);
-  font-weight: 500;
-  @media (min-width: 601px) {
-    @include fontSize(40px);
-  }
-}
-h2 {
-  @include fontSize(24px);
-  font-weight: 500;
-  @media (min-width: 601px) {
-    @include fontSize(32px);
-  }
-}
-h3 {
-  @include fontSize(20px);
-  font-weight: 700;
-  @media (min-width: 601px) {
-    @include fontSize(24px);
-  }
-}
-.labels {
-  @include fontSize(16px);
-  font-weight: 700;
-}
-.texte{
-  @include fontSize(16px);
-}
-.lien {
-  @include fontSize(16px);
-  font-weight: 500;
-  // text-decoration: underline;
-  @media (min-width: 601px) {
-    font-weight: 700;
-  }
-  color: $noir;
-}
-.infoDonValue {
-  font-weight: 700;
-}
+h1, .h1{
 
-// remove margin/padding
-h1, h2, h3 {
-  margin: 0;
+}
+h2, .h2 {
+
+}
+.title, h1, .h1, h2, .h2{
+  font-weight: 800;
+}
+.info {
+  font-weight: 300;
 }

@@ -1,33 +1,24 @@
 /**
-* @author Prenom Nom courriel
-* @todo Importer la fonte Futura
-* @todo Personnaliser les variables selon les spécifications du guide visuel
-*       Certaines variables devront être définies par une fonction de coloration
-* @todo Compléter selon l'énoncé de l'exercice
-* @todo Utiliser le sélecteur & pour les sélecteurs des différentes couleurs
+* @author Léa Marois
 */
 
 /** Polices de caractères **/
 
-// @font-face {
-//   font-family: Century Gothic;
-//   font-weight: 400;
-//   src: 	url('../fonts/centurygothic.ttf');
-// }
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-// $fonte : Futura, sans-serif;
+$fonte : "Nunito Sans", sans-serif;
 
 /** Palette de couleurs **/
 
-/* Couleurs de base */
-// $backgroud: #F8F3EB;
-// $noir: #0E1111;
-// $blanc: #FFFFFF;
-// $grisInput: #515A5C;
-// $rougeFonce: #9B0000;
-// $rougePale: #FF9898;
-// $rougeErreur: #FF0000;
+$DM--Background: #202c37;
+$DM--Text: #ffffff;
+$DM--Elements: #2b3945;
+
+$LM--Background: #fafafa;
+$LM--Text: #111517;
+$LM--Elements: #ffffff;
+$LM--Inputs: #858585;
 
 
 /** Points de rupture **/
-// $desktop : 601px;
+$desktop : 601px;
