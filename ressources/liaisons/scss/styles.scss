@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/**
+ * @author Léa Marois leamarois21@gmail.com
+ */
+
+/*
+ * ------------------
+ * TABLE DES MATIERES
+ * ------------------
+ * Librairies
+ ** Normalize
+ * UTILITAIRES
+ ** Variables
+ ** Mixins
+ * BASE
+ ** Typographie
+ ** Hyperliens
+ ** Boutons
+ * MODULES
+ ** gds - Styles généraux du Guide de styles
+ ** palette - Palette de couleurs
+ ** listeInteractivite - Éléments interactifs
+ */
+
+/****** Librairies ******/
+
+/** Normalize **/
+@import "../../../node_modules/normalize.scss/normalize.scss";
+
+/** Utilitaires **/
+@import "utilitaires/variables";
+@import "utilitaires/mixins";
+
+/** Base **/
+@import "base/typo";
+
