@@ -81,4 +81,37 @@
     font-size: calculateRem($size);
 }
 
-//Pour utiliser la fonction : @include fontSize(15px);
+// Fonction pour attribué light ou dark mode a chaque éléments qui doit changer de couleur
+@function get-color($name, $mode) {
+  @if $mode == 'dark' {
+    @return map-get($dark-mode-colors, $name);
+  } @else {
+    @return map-get($light-mode-colors, $name);
+   }
+}
+// Mixins pour appliqué les bonnes couleurs en light mode et dark mode
+@mixin theme($mode) {
+// Background
+  background-color: get-color(background, $mode);
+
+// Textes
+  color: get-color(text, $mode);
+  a {
+    color: get-color(text, $mode);
+  }
+
+// Elements
+  header, .ctnSearch, input, select {
+    background-color: get-color(elements, $mode);
+  }
+
+//Input
+  input[type=search]::placeholder, option {
+    color: get-color(inputs, $mode);
+  }
+//Icons
+  .ctnSearch::before {
+    background-image: get-color(icon-search, $mode);
+  }
+}
+// Besoin seulement de faire un @inclide theme(dark) ou theme(light) dans la balise approprié

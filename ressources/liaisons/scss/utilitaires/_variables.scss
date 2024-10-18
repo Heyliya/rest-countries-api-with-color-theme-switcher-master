@@ -9,16 +9,24 @@
 $fonte : "Nunito Sans", sans-serif;
 
 /** Palette de couleurs **/
+$light-mode-colors: (
+  background: #fafafa,
+  text: #111517,
+  elements: #ffffff,
+  inputs: #858585,
+  icon-search: url(../image/search-outline--LM.svg),
+);
 
-$DM--Background: #202c37;
-$DM--Text: #ffffff;
-$DM--Elements: #2b3945;
+$dark-mode-colors: (
+  background: #202c37,
+  text: #ffffff,
+  elements: #2b3945,
+  inputs: #ffffff,
+  icon-search: url(../image/search-outline--DM.svg),
+);
 
-$LM--Background: #fafafa;
-$LM--Text: #111517;
-$LM--Elements: #ffffff;
-$LM--Inputs: #858585;
-
+/** Box Shadow **/
+$boxShadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 
 /** Points de rupture **/
 $desktop : 601px;

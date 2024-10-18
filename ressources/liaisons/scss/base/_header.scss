@@ -1,0 +1,36 @@
+/**
+* @author Léa Marois
+* @todo
+*/
+
+header {
+  height: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $boxShadow;
+
+  button {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    &::before {
+      content: "";
+      width: 15px;
+      aspect-ratio: 1/1;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
+.darkMode #btnDarkMode::before {
+  background-image: url(../image/moon.svg);
+}
+.lightMode #btnDarkMode::before {
+  background-image: url(../image/moon-outline.svg);
+}

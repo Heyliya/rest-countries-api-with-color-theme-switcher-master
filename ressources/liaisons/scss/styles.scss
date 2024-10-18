@@ -34,4 +34,85 @@
 
 /** Base **/
 @import "base/typo";
+@import "base/header";
 
+/** Reset **/
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+input[type=search], select {
+  border: none;
+}
+
+/** Général **/
+//Margins
+header {
+  padding: 0 20px;
+  @media (min-width:$desktop) {
+    padding: 0 100px;
+  }
+}
+main {
+  padding: 0 20px;
+  @media (min-width:$desktop) {
+    padding: 0 100px;
+  }
+}
+
+
+/** DarkMode Styling **/
+.lightMode {
+  @include theme(light)
+}
+.darkMode {
+  @include theme(dark)
+}
+
+/** Elements Forms **/
+.ctn_filter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (min-width:$desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+// Search
+.ctnSearch, select {
+  height: 4.5rem;
+  border: none;
+  box-shadow: $boxShadow;
+  border-radius: 0.5rem;
+}
+.ctnSearch {
+  display: inline-block;
+  position: relative;
+  padding-right: 1rem;
+
+  &::before {
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    height: 100%;
+    left: 2rem;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 1.5em;
+  }
+
+  input[type=search] {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0;
+    padding-left: 6rem;
+    border-radius: 0.5rem;
+  }
+}

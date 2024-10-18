@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rest Countries API -- Homepage</title>
   <link rel="stylesheet" href="liaisons/css/styles.css"/>
+  <script defer src="liaisons/js/index.js"></script>
 </head>
 <body class="homepage darkMode">
   <header>
-    <p class="title">Where in the world?</p>
-    <button>Dark Mode</button>
+    <span class="title">Where in the world?</span>
+    <button id="btnDarkMode">Dark Mode</button>
   </header>
   <main>
-    <div>
-      <input class="search" placeholder="Search for a country" type="search">
+    <div class="ctn_filter">
+      <span class="ctnSearch">
+        <input id="btn_search" class="search" placeholder="Search for a country" type="search">
+      </span>
       <select class="filter" name="filter" id="filter">
         <option value="">Filter by Region</option>
         <option value="africa">Africa</option>
@@ -33,8 +36,8 @@
           <li>Region: <span class="info">Europe</span></li>
           <li>Capital: <span class="info">Berlin</span></li>
         </ul>
-      </li>
       </a>
+    </li>
   </ul>
   </main>
 </body>
