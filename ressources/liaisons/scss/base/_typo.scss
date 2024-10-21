@@ -22,13 +22,13 @@ body {
   @include fontSize(16px);
 }
 .title {
-
+  @include fontSize(20px);
 }
 h1, .h1{
 
 }
 h2, .h2 {
-
+  @include fontSize(18px);
 }
 .title, h1, .h1, h2, .h2{
   font-weight: 800;

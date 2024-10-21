@@ -1,0 +1,22 @@
+.carte_pays {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: $borderRadius;
+
+  &--lien {
+    display: flex;
+    flex-direction: column;
+
+  }
+  &--img {
+    border-radius: $borderRadius $borderRadius 0 0;
+    max-width: 100%;
+  }
+  &--pays {
+    margin: 0;
+    padding: 2rem 2rem;
+  }
+  &--info {
+    padding: 0 2rem 2rem;
+  }
+}
