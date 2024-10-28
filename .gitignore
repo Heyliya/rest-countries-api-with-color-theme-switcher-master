@@ -16,5 +16,5 @@
 
 design/
 node_modules/
-public/liaisons/css/
+# public/liaisons/css/
 # ressources/
