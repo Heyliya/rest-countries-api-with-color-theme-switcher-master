@@ -10,7 +10,10 @@
   }
   &--img {
     border-radius: $borderRadius $borderRadius 0 0;
-    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    object-position: top;
   }
   &--pays {
     margin: 0;

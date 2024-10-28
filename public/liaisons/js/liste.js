@@ -1,24 +1,29 @@
-// todo: ajouter contenue du filtre par programmation
-// todo: Filter Response https://restcountries.com/v3.1/{service}?fields={field},{field},{field}
-https://restcountries.com/v3.1/all?fields=name,capital,currencies
-
-
+// https://restcountries.com/v3.1/all?fields=name,capital,currencies
 
 // Initiation de la page
 window.addEventListener("load", init)
 
 function init() {
-  document.querySelector("#btnDarkMode").addEventListener("click", darkModeToggle.bind(this))
-  peuplerListePays("all")
+  document.querySelector("#filter").addEventListener("change", peuplerListePays.bind(this))
+  peuplerListePays()
 }
 
-function darkModeToggle() {
-  document.querySelector("body").classList.toggle("darkMode")
-  document.querySelector("body").classList.toggle("lightMode")
+function filterPays() { 
+  let url;
+  let filter = document.querySelector("#filter")
+  if (filter.value) {
+    url = `https://restcountries.com/v3.1/region/${filter.value}?fields=name,population,region,capital,flags,cca2`
+  } else {
+    url = `https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags,cca2`
+  }
+  return url
 }
 
-function peuplerListePays(filtre) {
-  const url = `https://restcountries.com/v3.1/${filtre}?fields=name,population,region,capital,flags`
+function peuplerListePays() {
+  // Reset de la liste
+  document.querySelector(".liste_pays").innerHTML = ""
+
+  let url = filterPays()
 
   fetch(url)
     .then(response => response.json())
@@ -64,26 +69,4 @@ function peuplerListePays(filtre) {
       });
     })
     .catch(error => console.error('Erreur:', error));
-}
-
-
-// https://stackoverflow.com/questions/814613/how-to-read-get-data-from-a-url-using-javascript
-function parseURLParams(url) {
-  var queryStart = url.indexOf("?") + 1,
-      queryEnd   = url.indexOf("#") + 1 || url.length + 1,
-      query = url.slice(queryStart, queryEnd - 1),
-      pairs = query.replace(/\+/g, " ").split("&"),
-      parms = {}, i, n, v, nv;
-
-  if (query === url || query === "") return;
-
-  for (i = 0; i < pairs.length; i++) {
-      nv = pairs[i].split("=", 2);
-      n = decodeURIComponent(nv[0]);
-      v = decodeURIComponent(nv[1]);
-
-      if (!parms.hasOwnProperty(n)) parms[n] = [];
-      parms[n].push(nv.length === 2 ? v : null);
-  }
-  return parms;
 }
