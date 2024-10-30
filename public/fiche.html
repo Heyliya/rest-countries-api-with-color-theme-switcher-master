@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rest Countries API -- Detail Page</title>
   <link rel="stylesheet" href="liaisons/css/styles.css"/>
-  <script defer src="liaisons/js/index.js"></script>
+  <script defer src="liaisons/js/dark-mode.js"></script>
+  <script defer src="liaisons/js/fiche.js"></script>
 </head>
 <body class="detailPage darkMode">
   <header>
@@ -14,28 +15,25 @@
   </header>
   <!-- <button>Back</button> -->
   <a href="index.html">Back</a>
-  <img src="https://flagcdn.com/w320/be.png" alt="">
+  <img id="flag" src="" alt="">
   <div>
-    <h1>Belgium</h1>
+    <h1 id="commonName"></h1>
     <div class="infoCountry">
       <ul>
-        <li>Native Name: <span class="info">Belgie</span></li>
-        <li>Population: <span class="info">11,319,511</span></li>
-        <li>Region: <span class="info">Europe</span></li>
-        <li>Sub Region: <span class="info">Western Europe</span></li>
-        <li>Capital: <span class="info">Brussels</span></li>
+        <li>Native Name: <span id="nativeName" class="info"></span></li>
+        <li>Population: <span id="population" class="info"></span></li>
+        <li>Region: <span id="region" class="info"></span></li>
+        <li>Sub Region: <span id="subregion" class="info"></span></li>
+        <li>Capital: <span id="capital" class="info"></span></li>
       </ul>
       <ul>
-        <li>Top Level Domain: <span class="info">.be</span></li>
-        <li>Currencies: <span class="info">Euro</span></li>
-        <li>Languages: <span class="info">Dutch, French, German</span></li>
+        <li>Top Level Domain: <span id="tld" class="info"></span></li>
+        <li>Currencies: <span id="currencies" class="info"></span></li>
+        <li>Languages: <span id="languages" class="info"></span></li>
       </ul>
     </div>
-    <ul>
-      Border Countries: 
-      <li><a href="">France</a></li>
-      <li><a href="">Germany</a></li>
-      <li><a href="">Netherlands</a></li>
+    <p>Border Countries:</p>
+    <ul id="borders">
     </ul>
   </div>
 </body>
