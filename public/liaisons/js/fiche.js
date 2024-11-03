@@ -57,21 +57,26 @@ function peuplerFiche() {
     languages.innerText = Object.values(pays.languages).join(', ')
     
 
-    for (const borderedCountryCode of pays.borders) {
-      let refLi = document.createElement('li')
-      let refA = document.createElement('a')
+    if (pays.borders.length === 0) {
+      refBorders.innerHTML = "<li>No bordering countries</li>"
       
-      fetch(`https://restcountries.com/v3.1/alpha/${borderedCountryCode}?fields=name,cca2`)
-      .then(response => response.json())
-      .then(borderedPays => {
-        refA.innerText = borderedPays.name.common
-        refA.setAttribute('href', `fiche.html?pays=${borderedPays.cca2}`)
-      })
-      .catch(error => console.error(error))
-      refLi.appendChild(refA)
-      refBorders.appendChild(refLi)
-      // refBorders.innerHTML += refLi
+    } else {
+      for (const borderedCountryCode of pays.borders) {
+        let refLi = document.createElement('li')
+        let refA = document.createElement('a')
+        
+        fetch(`https://restcountries.com/v3.1/alpha/${borderedCountryCode}?fields=name,cca2`)
+        .then(response => response.json())
+        .then(borderedPays => {
+          refA.innerText = borderedPays.name.common
+          refA.setAttribute('href', `fiche.html?pays=${borderedPays.cca2}`)
+        })
+        .catch(error => console.error(error))
+        refLi.appendChild(refA)
+        refBorders.appendChild(refLi)
+      }
     }
+
   })
   .catch(error => console.error(error))
 }

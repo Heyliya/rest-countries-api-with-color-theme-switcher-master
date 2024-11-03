@@ -2,9 +2,16 @@
 * @author Léa Marois
 * @todo
 */
-
+body {
+  padding-top: 75px;
+}
 header {
+  box-sizing:border-box;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
   height: 75px;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

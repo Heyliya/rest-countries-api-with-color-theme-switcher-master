@@ -125,3 +125,33 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 40px;
 }
+
+/** Fiche **/
+
+.detailPage main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+  "back"
+  "image"
+  "content";
+  @media (min-width: $desktop) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 40px;
+    grid-template-areas: 
+      "back ."
+      "image content";
+  }
+  .back {
+    grid-area: back;
+  }
+  .img {
+    grid-area: image;
+    width: 100%;
+  }
+  .content {
+    grid-area: content;
+  }
+}
