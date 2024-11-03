@@ -504,7 +504,7 @@ h2, .h2 {
 * @todo
 */
 body {
-  padding-top: 75px;
+  padding-top: 100px;
 }
 
 header {
@@ -558,7 +558,7 @@ header button::before {
   width: 100%;
   aspect-ratio: 3/2;
   object-fit: contain;
-  object-position: top;
+  object-position: center;
 }
 .carte_pays--pays {
   margin: 0;
@@ -684,6 +684,7 @@ main {
 /** Listes **/
 .liste_pays {
   padding-left: 0;
+  margin: 25px 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 40px;
