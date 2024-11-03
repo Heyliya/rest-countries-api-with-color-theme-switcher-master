@@ -1,7 +1,7 @@
 .carte_pays {
   width: 100%;
   aspect-ratio: 3/4;
-  border-radius: $borderRadius;
+  @include inputs();
 
   &--lien {
     display: flex;

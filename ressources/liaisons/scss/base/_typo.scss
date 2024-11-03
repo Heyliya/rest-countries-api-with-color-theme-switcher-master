@@ -19,7 +19,7 @@ body {
   @include fontSize(14px);
 }
 .detailPage {
-  @include fontSize(16px);
+  @include fontSize(14px);
 }
 .title {
   @include fontSize(20px);
@@ -34,5 +34,5 @@ h2, .h2 {
   font-weight: 800;
 }
 .info {
-  font-weight: 300;
+  font-weight: 100;
 }

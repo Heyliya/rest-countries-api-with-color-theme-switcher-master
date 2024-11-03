@@ -101,7 +101,7 @@
   }
 
 // Elements
-  header, .ctnSearch, input, select, .carte_pays {
+  header, .ctnSearch, input, select, .carte_pays, .back, #borders li {
     background-color: get-color(elements, $mode);
   }
 
@@ -115,3 +115,8 @@
   }
 }
 // Besoin seulement de faire un @inclide theme(dark) ou theme(light) dans la balise approprié
+
+@mixin inputs() {
+  box-shadow: $boxShadow, -2px -2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: $borderRadius;
+}

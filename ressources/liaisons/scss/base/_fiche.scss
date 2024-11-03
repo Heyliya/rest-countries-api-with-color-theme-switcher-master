@@ -1,0 +1,59 @@
+// BTN back
+.back {
+  @include inputs();
+ width: 100px;
+ text-align: center;
+ padding: 5px;
+
+ &::before {
+  content: '\2190';
+  padding-right: 10px;
+ }
+}
+
+.detailPage {
+  h1 {
+    margin: 25px 0;
+  }
+  ul {
+    //reset
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .infoCountry {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 100px;
+    row-gap: 30px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    // @media (min-width:$desktop) {
+    //   flex-direction: row;
+    // }
+  }
+
+  #borders {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    li {
+      @include inputs();
+      font-weight: 100;
+      @include fontSize(10px);
+      padding: 3px 10px;
+      width: 75px;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-wrap: nowrap;
+    }
+  }
+}

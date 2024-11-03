@@ -36,6 +36,7 @@
 @import "base/typo";
 @import "base/header";
 @import "base/card";
+@import "base/fiche";
 
 /** Reset **/
 a {
@@ -87,8 +88,7 @@ main {
 .ctnSearch, select {
   height: 4.5rem;
   border: none;
-  box-shadow: $boxShadow;
-  border-radius: $borderRadius
+  @include inputs();
 }
 .ctnSearch {
   display: inline-block;
@@ -141,16 +141,27 @@ main {
   "back"
   "image"
   "content";
+  row-gap: 25px;
   @media (min-width: $desktop) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
-    gap: 40px;
+    column-gap: 5%;
+    row-gap: 40px;
     grid-template-areas: 
       "back ."
       "image content";
   }
   .back {
     grid-area: back;
+    @include inputs();
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+   
+    &::before {
+     content: '\2190';
+     padding-right: 10px;
+    }
   }
   .img {
     grid-area: image;
@@ -158,5 +169,62 @@ main {
   }
   .content {
     grid-area: content;
+    ul {
+      //reset
+      padding-left: 0;
+      margin: 0;
+    }
+
+    h1 {
+      margin: 25px 0;
+    }
+
+    .infoCountry {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 100px;
+      row-gap: 30px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+    .ctnBorders {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      gap: 10px;
+
+      @media screen and (min-width: $desktop) {
+        flex-direction: row;
+        gap: 20px;
+        
+      }
+      p {
+        margin: 0;
+        text-wrap: nowrap;
+      }
+
+    }
+
+    #borders {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+      li a {
+        @include inputs();
+        font-weight: 100;
+        @include fontSize(10px);
+        padding: 3px 10px;
+        width: 75px;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-wrap: nowrap;
+      }
+    }
   }
 }

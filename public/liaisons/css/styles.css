@@ -477,8 +477,8 @@ body {
 }
 
 .detailPage {
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .title {
@@ -496,7 +496,7 @@ h2, .h2 {
 }
 
 .info {
-  font-weight: 300;
+  font-weight: 100;
 }
 
 /**
@@ -547,6 +547,7 @@ header button::before {
 .carte_pays {
   width: 100%;
   aspect-ratio: 3/4;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
 }
 .carte_pays--lien {
@@ -566,6 +567,57 @@ header button::before {
 }
 .carte_pays--info {
   padding: 0 2rem 2rem;
+}
+
+.back {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+}
+.back::before {
+  content: "←";
+  padding-right: 10px;
+}
+
+.detailPage h1 {
+  margin: 25px 0;
+}
+.detailPage ul {
+  padding-left: 0;
+  margin: 0;
+}
+.detailPage .infoCountry {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 100px;
+  row-gap: 30px;
+}
+.detailPage .infoCountry ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.detailPage #borders {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.detailPage #borders li {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  font-weight: 100;
+  font-size: 10px;
+  font-size: 1rem;
+  padding: 3px 10px;
+  width: 75px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
 }
 
 /** Reset **/
@@ -608,7 +660,7 @@ main {
 .lightMode a {
   color: #111517;
 }
-.lightMode header, .lightMode .ctnSearch, .lightMode input, .lightMode select, .lightMode .carte_pays {
+.lightMode header, .lightMode .ctnSearch, .lightMode input, .lightMode select, .lightMode .carte_pays, .lightMode .back, .lightMode #borders li {
   background-color: #ffffff;
 }
 .lightMode input[type=search]::placeholder, .lightMode option {
@@ -625,7 +677,7 @@ main {
 .darkMode a {
   color: #ffffff;
 }
-.darkMode header, .darkMode .ctnSearch, .darkMode input, .darkMode select, .darkMode .carte_pays {
+.darkMode header, .darkMode .ctnSearch, .darkMode input, .darkMode select, .darkMode .carte_pays, .darkMode .back, .darkMode #borders li {
   background-color: #2b3945;
 }
 .darkMode input[type=search]::placeholder, .darkMode option {
@@ -651,7 +703,7 @@ main {
 .ctnSearch, select {
   height: 4.5rem;
   border: none;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
 }
 
@@ -700,17 +752,28 @@ main {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
   grid-template-areas: "back" "image" "content";
+  row-gap: 25px;
 }
 @media (min-width: 601px) {
   .detailPage main {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
-    gap: 40px;
+    column-gap: 5%;
+    row-gap: 40px;
     grid-template-areas: "back ." "image content";
   }
 }
 .detailPage main .back {
   grid-area: back;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+}
+.detailPage main .back::before {
+  content: "←";
+  padding-right: 10px;
 }
 .detailPage main .img {
   grid-area: image;
@@ -718,6 +781,60 @@ main {
 }
 .detailPage main .content {
   grid-area: content;
+}
+.detailPage main .content ul {
+  padding-left: 0;
+  margin: 0;
+}
+.detailPage main .content h1 {
+  margin: 25px 0;
+}
+.detailPage main .content .infoCountry {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 100px;
+  row-gap: 30px;
+}
+.detailPage main .content .infoCountry ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.detailPage main .content .ctnBorders {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 10px;
+}
+@media screen and (min-width: 601px) {
+  .detailPage main .content .ctnBorders {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+.detailPage main .content .ctnBorders p {
+  margin: 0;
+  text-wrap: nowrap;
+}
+.detailPage main .content #borders {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.detailPage main .content #borders li a {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  font-weight: 100;
+  font-size: 10px;
+  font-size: 1rem;
+  padding: 3px 10px;
+  width: 75px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
 }
 
 /*# sourceMappingURL=styles.css.map */
