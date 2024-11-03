@@ -125,6 +125,10 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 40px;
 }
+// Caché les items de la listes lorsqu'on filtre ou cherche
+.paysCache {
+  display: none;
+}
 
 /** Fiche **/
 

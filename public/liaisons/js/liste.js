@@ -1,29 +1,37 @@
 // https://restcountries.com/v3.1/all?fields=name,capital,currencies
 
+let arrPays = []
+
 // Initiation de la page
 window.addEventListener("load", init)
 
 function init() {
-  document.querySelector("#filter").addEventListener("change", peuplerListePays.bind(this))
+  document.querySelector("#filter").addEventListener("change", filterPays.bind(this))
+  document.querySelector('#btn_search').addEventListener('input', chercher.bind(this))
   peuplerListePays()
 }
 
 function filterPays() { 
-  let url;
-  let filter = document.querySelector("#filter")
-  if (filter.value) {
-    url = `https://restcountries.com/v3.1/region/${filter.value}?fields=name,population,region,capital,flags,cca2`
-  } else {
-    url = `https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags,cca2`
-  }
-  return url
+  let filter = document.querySelector("#filter").value
+  
+  arrPays.forEach(refPays => { 
+    let region = refPays.getAttribute('data-region')
+    
+      if (region === filter) {
+        // console.log(refPays);
+        refPays.classList.remove('paysCache')
+      } else {
+        // console.log('pays hidden');
+        refPays.classList.add('paysCache')
+      }
+  });
 }
 
 function peuplerListePays() {
   // Reset de la liste
   document.querySelector(".liste_pays").innerHTML = ""
 
-  let url = filterPays()
+  let url = `https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags,cca2`
 
   fetch(url)
     .then(response => response.json())
@@ -39,6 +47,8 @@ function peuplerListePays() {
 
         let refCarte = document.createElement('li')
           refCarte.classList.add('carte_pays')
+          refCarte.setAttribute('data-region', pays.region)
+          refCarte.setAttribute('data-common_name', nomPays)
 
           let refLien = document.createElement("a")
             refLien.setAttribute('href', `fiche.html?pays=${pays.cca2}`)
@@ -67,6 +77,20 @@ function peuplerListePays() {
           refCarte.appendChild(refLien)
         document.querySelector(".liste_pays").appendChild(refCarte)
       });
+    }).then(() => { 
+      arrPays = document.querySelectorAll('.carte_pays')
     })
     .catch(error => console.error('Erreur:', error));
+}
+
+function chercher(e) {
+  let search = e.currentTarget.value.toLowerCase()
+  arrPays.forEach(refPays => {
+    let nomPays = refPays.getAttribute('data-common_name').toLowerCase()
+    if (nomPays.includes(search)) {
+      refPays.classList.remove('paysCache')
+    } else {
+      refPays.classList.add('paysCache')
+    }
+  });
 }

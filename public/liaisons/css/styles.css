@@ -689,6 +689,10 @@ main {
   gap: 40px;
 }
 
+.paysCache {
+  display: none;
+}
+
 /** Fiche **/
 .detailPage main {
   display: grid;
